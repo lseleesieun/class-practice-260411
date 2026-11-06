@@ -1,19 +1,11 @@
-# :earth_americas: GDP dashboard template
+# 나의 자기소개 페이지
 
-A simple Streamlit app showing the GDP of different countries in the world.
+Streamlit으로 만든 자기소개 웹 페이지입니다. 이름, 소개, 소속, 꿈, 좋아하는 음식은 `streamlit_app.py`의 `PROFILE`에서 바꿀 수 있습니다. 프로필 사진은 앱 화면에서 업로드할 수 있습니다.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+## 실행 방법
 
-### How to run it on your own machine
+Codespaces 터미널에서 다음 명령을 실행합니다.
 
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+```bash
+python -m streamlit run streamlit_app.py
+```
