@@ -5,10 +5,10 @@ import streamlit as st
 
 # Edit this profile block to personalize the page.
 PROFILE = {
-	"name": "홍길동",
+	"name": "이시은",
 	"headline": "좋아하는 것을 오래, 깊게 만드는 사람",
 	"intro": "안녕하세요! 새로운 것을 배우고, 작은 아이디어를 직접 만들어 보는 걸 좋아합니다.",
-	"affiliation": "OO학교 · OO학과",
+	"affiliation": "청주교육대학교",
 	"dream": "사람들의 일상을 더 즐겁고 편리하게 만드는 사람이 되고 싶습니다.",
 	"foods": ["떡볶이", "파스타", "딸기 케이크"],
 }
@@ -55,15 +55,6 @@ st.markdown(
 	}
 	.hero-title span { color: var(--blue); }
 	.hero-copy { font-size: 19px; line-height: 1.8; max-width: 590px; }
-	.photo-frame {
-		min-height: 300px; display: flex; flex-direction: column;
-		align-items: center; justify-content: center; gap: 8px;
-		background: linear-gradient(145deg, var(--yellow) 0 34%, var(--pink) 34% 68%, var(--mint) 68%);
-		border: 3px solid var(--ink); border-radius: 10px;
-		box-shadow: 9px 9px 0 var(--ink); text-align: center;
-	}
-	.photo-frame span { font-size: 76px; line-height: 1; }
-	.photo-frame strong { font-family: 'Jua', sans-serif; font-size: 18px; }
 	.section-label {
 		color: var(--coral); font-size: 14px; font-weight: 700;
 		margin: 8px 0 4px; text-transform: uppercase;
@@ -94,11 +85,9 @@ st.markdown(
 		padding: 24px 28px; background: var(--ink); color: white;
 		border-radius: 8px; font-size: 18px; line-height: 1.7;
 	}
-	.stFileUploader { margin-top: 14px; }
 	@media (max-width: 700px) {
 		.hero-title { font-size: 42px; }
 		.hero-copy { font-size: 17px; }
-		.photo-frame { min-height: 220px; }
 	}
 	</style>
 	""",
@@ -112,28 +101,11 @@ affiliation = html.escape(PROFILE["affiliation"])
 dream = html.escape(PROFILE["dream"])
 
 st.markdown('<div class="eyebrow">A LITTLE INTRODUCTION</div>', unsafe_allow_html=True)
-hero_text, hero_visual = st.columns([1.15, 0.85], gap="large", vertical_alignment="center")
-
-with hero_text:
-	st.markdown(
-		f'<div class="hero-title">안녕,<br><span>나는 {name}</span></div>'
-		f'<div class="hero-copy"><strong>{headline}</strong><br>{intro}</div>',
-		unsafe_allow_html=True,
-	)
-
-with hero_visual:
-	uploaded_photo = st.file_uploader(
-		"프로필 사진 추가",
-		type=["png", "jpg", "jpeg"],
-		label_visibility="collapsed",
-	)
-	if uploaded_photo:
-		st.image(uploaded_photo, use_container_width=True)
-	else:
-		st.markdown(
-			'<div class="photo-frame"><span>👋</span><strong>여기에 내 사진을 추가해 보세요</strong></div>',
-			unsafe_allow_html=True,
-		)
+st.markdown(
+	f'<div class="hero-title">안녕,<br><span>나는 {name}</span></div>'
+	f'<div class="hero-copy"><strong>{headline}</strong><br>{intro}</div>',
+	unsafe_allow_html=True,
+)
 
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<div class="section-label">WHO I AM</div>', unsafe_allow_html=True)
